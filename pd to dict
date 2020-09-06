@@ -1,0 +1,9 @@
+# yahoo競馬からスクレイピング。データフレームの各列から辞書を作成。
+
+import pandas as pd
+
+url = "https://keiba.yahoo.co.jp/odds/tfw/2001020711/"
+
+test = pd.read_html(url)[2]
+
+d_col = dict(zip(test["馬"], test['単勝']))
